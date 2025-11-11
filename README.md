@@ -68,7 +68,7 @@ docs/
 
 ## Getting Started
 
-### Interactive Mode (NEW!) 🚀
+### Interactive Mode
 Type and compile code dynamically:
 ```bash
 python run_interactive.py
