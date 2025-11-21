@@ -11,6 +11,7 @@ from parser import Parser, ParseError
 from semantic import SemanticAnalyzer
 from codegen import CodeGenerator
 from ast_nodes import ASTPrinter
+from x86_codegen import X86CodeGenerator
 
 class CompilerError(Exception):
     """Base exception for compiler errors."""
@@ -60,7 +61,7 @@ class Compiler:
         """Compile source code through all phases."""
         self.source_code = source_code
         
-        print("🔄 Starting compilation process...")
+        print("Starting compilation process...")
         print("=" * 80)
         
         # Phase 1: Lexical Analysis
@@ -79,12 +80,12 @@ class Compiler:
         if not self._code_generation():
             return False
         
-        print("✅ Compilation completed successfully!")
+        print("Compilation completed successfully!")
         return True
     
     def _lexical_analysis(self) -> bool:
         """Perform lexical analysis."""
-        print("📝 Phase 1: Lexical Analysis")
+        print("Phase 1: Lexical Analysis")
         print("-" * 40)
         
         try:
@@ -99,15 +100,15 @@ class Compiler:
             return True
             
         except LexicalError as e:
-            print(f"❌ Lexical Error: {e}")
+            print(f"Lexical error: {e}")
             return False
         except Exception as e:
-            print(f"❌ Unexpected error in lexical analysis: {e}")
+            print(f"Unexpected error in lexical analysis: {e}")
             return False
     
     def _syntax_analysis(self) -> bool:
         """Perform syntax analysis (parsing)."""
-        print("\n🌳 Phase 2: Syntax Analysis (Parsing)")
+        print("\nPhase 2: Syntax Analysis (Parsing)")
         print("-" * 40)
         
         try:
@@ -132,7 +133,7 @@ class Compiler:
                 
                 return True
             else:
-                print("❌ Parsing failed:")
+                print("Parsing failed:")
                 if self.parser.errors:
                     self.parser.print_errors()
                 else:
@@ -140,13 +141,13 @@ class Compiler:
                 return False
                 
         except ParseError as e:
-            print(f"❌ Parse Error: {e}")
+            print(f"Parse error: {e}")
             import traceback
             if self.debug_mode:
                 traceback.print_exc()
             return False
         except Exception as e:
-            print(f"❌ Unexpected error in syntax analysis: {e}")
+            print(f"Unexpected error in syntax analysis: {e}")
             import traceback
             if self.debug_mode:
                 traceback.print_exc()
@@ -154,7 +155,7 @@ class Compiler:
     
     def _semantic_analysis(self) -> bool:
         """Perform semantic analysis."""
-        print("\n🔍 Phase 3: Semantic Analysis")
+        print("\nPhase 3: Semantic Analysis")
         print("-" * 40)
         
         try:
@@ -170,17 +171,17 @@ class Compiler:
                 
                 return True
             else:
-                print("❌ Semantic analysis failed:")
+                print("Semantic analysis failed:")
                 self.semantic_analyzer.print_errors()
                 return False
                 
         except Exception as e:
-            print(f"❌ Unexpected error in semantic analysis: {e}")
+            print(f"Unexpected error in semantic analysis: {e}")
             return False
     
     def _code_generation(self) -> bool:
         """Perform code generation."""
-        print("\n⚙️ Phase 4: Code Generation")
+        print("\nPhase 4: Code Generation")
         print("-" * 40)
         
         try:
@@ -195,7 +196,7 @@ class Compiler:
             return True
             
         except Exception as e:
-            print(f"❌ Unexpected error in code generation: {e}")
+            print(f"Unexpected error in code generation: {e}")
             return False
     
     def save_output(self, output_dir: str = "output"):
@@ -251,12 +252,18 @@ class Compiler:
                 
                 f.write(symbol_output.getvalue())
         
-        # Save generated code
+        # Save generated three-address code
         if self.code_generator:
             code_file = os.path.join(output_dir, f"{base_name}_code.txt")
             self.code_generator.save_code(code_file)
+
+        # Save approximate x86-64 assembly derived from TAC
+        if self.instructions:
+            asm_file = os.path.join(output_dir, f"{base_name}_x86.asm")
+            x86_gen = X86CodeGenerator(self.instructions)
+            x86_gen.save(asm_file)
         
-        print(f"\n📁 Output files saved to '{output_dir}/' directory")
+        print(f"\nOutput files saved to '{output_dir}/' directory")
     
     def print_summary(self):
         """Print compilation summary."""
@@ -267,10 +274,10 @@ class Compiler:
         if self.source_file:
             print(f"Source file: {self.source_file}")
         
-        print(f"Lexical Analysis: {'✓ PASSED' if self.tokens else '❌ FAILED'}")
-        print(f"Syntax Analysis:  {'✓ PASSED' if self.ast else '❌ FAILED'}")
-        print(f"Semantic Analysis: {'✓ PASSED' if self.semantic_analyzer and len(self.semantic_analyzer.errors) == 0 else '❌ FAILED'}")
-        print(f"Code Generation:  {'✓ PASSED' if self.instructions else '❌ FAILED'}")
+        print(f"Lexical Analysis: {'PASSED' if self.tokens else 'FAILED'}")
+        print(f"Syntax Analysis:  {'PASSED' if self.ast else 'FAILED'}")
+        print(f"Semantic Analysis: {'PASSED' if self.semantic_analyzer and len(self.semantic_analyzer.errors) == 0 else 'FAILED'}")
+        print(f"Code Generation:  {'PASSED' if self.instructions else 'FAILED'}")
         
         if self.tokens:
             print(f"\nStatistics:")
@@ -368,7 +375,7 @@ def main():
         compiler.print_summary()
         return 0
     else:
-        print("\n❌ Compilation failed!")
+        print("\nCompilation failed!")
         compiler.print_summary()
         return 1
 

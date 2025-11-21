@@ -80,8 +80,10 @@ class Lexer:
                 indent_level += 8  # Treat tab as 8 spaces
             self.advance()
         
-        # Skip empty lines and comments
+        # Skip empty lines and comment-only lines, but avoid infinite loops
+        # Let the main tokenize loop handle the newline/comment characters.
         if self.current_char() in ['\n', '#', None]:
+            self.at_line_start = False
             return
         
         self.at_line_start = False

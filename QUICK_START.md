@@ -1,4 +1,4 @@
-# 🚀 Quick Start - Interactive Compiler
+# Quick Start - Interactive Compiler
 
 ## Launch in 3 Seconds
 
@@ -10,7 +10,7 @@ That's it! Now you can type code and compile it instantly.
 
 ---
 
-## 🎯 Try These Examples
+## Try These Examples
 
 ### Example 1: Simple Math (30 seconds)
 
@@ -21,12 +21,12 @@ That's it! Now you can type code and compile it instantly.
 
 ```
 >>> x = 10 + 20 * 2
-✅ COMPILATION SUCCESSFUL!
-📊 Compilation Summary:
+Compilation successful!
+Compilation Summary:
   • Tokens generated: 8
   • Instructions generated: 3
 
-📝 Generated Code:
+Generated Code:
   1: t1 = 20 * 2
   2: t2 = 10 + t1
   3: x = t2
@@ -65,14 +65,14 @@ That's it! Now you can type code and compile it instantly.
 ```
 
 You'll see:
-- ✅ Lexical analysis
-- ✅ Syntax analysis (AST)
-- ✅ Semantic analysis
-- ✅ Code generation
+- Lexical analysis
+- Syntax analysis (AST)
+- Semantic analysis
+- Code generation
 
 ---
 
-## 🎮 Controls
+## Controls
 
 ### While Typing (Multi-line mode):
 - **:compile** → Compile your code
@@ -89,7 +89,7 @@ You'll see:
 
 ---
 
-## 💡 Pro Tips
+## Pro Tips
 
 ### Tip 1: Start with Quick Mode
 Perfect for testing single lines:
@@ -115,16 +115,16 @@ Enter filename: examples/test1.py
 
 ---
 
-## 🏆 What You Get
+## What You Get
 
 Every compilation shows:
 
-✅ **Phase 1**: Tokens (Lexical Analysis)
+**Phase 1**: Tokens (Lexical Analysis)
 ```
 INTEGER(10), PLUS(+), INTEGER(5) ...
 ```
 
-✅ **Phase 2**: AST (Syntax Analysis)
+**Phase 2**: AST (Syntax Analysis)
 ```
 Program:
   Assignment: x =
@@ -133,14 +133,14 @@ Program:
       Literal: 5
 ```
 
-✅ **Phase 3**: Semantic Check
+**Phase 3**: Semantic Check
 ```
 ✓ No type errors
 ✓ All variables defined
 ✓ Scope resolution correct
 ```
 
-✅ **Phase 4**: Generated Code
+**Phase 4**: Generated Code
 ```
 1: t1 = 10 + 5
 2: x = t1
@@ -148,7 +148,7 @@ Program:
 
 ---
 
-## 🎓 Perfect For
+## Perfect For
 
 - ✏️ Testing homework examples
 - 🔬 Understanding compiler phases
@@ -158,7 +158,7 @@ Program:
 
 ---
 
-## ⚡ Common Use Cases
+## Common Use Cases
 
 ### Test an expression:
 ```bash
@@ -191,7 +191,7 @@ result = factorial(5)
 
 ---
 
-## 🚨 Need Help?
+## Need Help?
 
 - **Can't find Python?** → Make sure Python 3 is installed
 - **Import errors?** → Run from project root directory
@@ -200,14 +200,14 @@ result = factorial(5)
 
 ---
 
-## 🎉 You're Ready!
+## You're Ready!
 
 Just run:
 ```bash
 python run_interactive.py
 ```
 
-And start compiling! 🚀
+And start compiling!
 
 ---
 

@@ -1,4 +1,4 @@
-# 🔧 Troubleshooting Interactive Mode
+# Troubleshooting Interactive Mode
 
 ## Issue: Compiler Gets Stuck at Phase 2
 
@@ -6,7 +6,7 @@ If the compiler hangs during Phase 2 (Syntax Analysis), here's how to fix it:
 
 ---
 
-## ✅ **FIXED - New Safeguards Added**
+## FIXED - New Safeguards Added
 
 I've added several fixes to prevent the parser from getting stuck:
 
@@ -26,16 +26,16 @@ python test_interactive.py
 ```
 
 This will test:
-- ✅ Lexer (tokenization)
-- ✅ Parser (syntax analysis)
-- ✅ Simple expressions
-- ✅ Operators
-- ✅ Print statements
-- ✅ If statements
+- Lexer (tokenization)
+- Parser (syntax analysis)
+- Simple expressions
+- Operators
+- Print statements
+- If statements
 
 ---
 
-## 🔍 **Debug Mode**
+## Debug Mode
 
 Use debug mode to see exactly what's happening:
 
@@ -58,7 +58,7 @@ AST has 1 statements
 
 ---
 
-## 🐛 **Common Issues & Solutions**
+## Common Issues & Solutions
 
 ### Problem: Stuck on simple expression
 **Example:** `x = 10`
@@ -105,7 +105,7 @@ result = test()
 
 ---
 
-## 💡 **Workarounds**
+## Workarounds
 
 ### Workaround 1: Add explicit newline
 If Quick Mode hangs, try Multi-line mode instead:
@@ -141,7 +141,7 @@ This will show you exactly which types of code work.
 
 ---
 
-## 🎯 **What Was Fixed**
+## What Was Fixed
 
 ### Fix 1: Parser Infinite Loop Protection
 ```python
@@ -167,7 +167,7 @@ if not source_code.endswith('\n'):
 try:
     success = self.compiler.compile_source(source_code)
 except Exception as e:
-    print(f"\n❌ Compilation error: {e}")
+    print(f"\nCompilation error: {e}")
     # Shows stack trace in debug mode
 ```
 
@@ -180,7 +180,7 @@ if self.debug_mode:
 
 ---
 
-## 📋 **Step-by-Step Debugging**
+## Step-by-Step Debugging
 
 ### Step 1: Test the Lexer
 ```bash
@@ -200,7 +200,7 @@ If any test fails, that's where the issue is.
 
 ---
 
-## 🚨 **Still Having Issues?**
+## Still Having Issues?
 
 ### Option 1: Check Python Version
 ```bash
@@ -231,28 +231,28 @@ This should work without any issues.
 
 ---
 
-## 📊 **Expected Behavior**
+## Expected Behavior
 
-### ✅ Successful Compilation
+### Successful Compilation
 ```
-🔄 Starting compilation process...
+Starting compilation process...
 ================================================================================
-📝 Phase 1: Lexical Analysis
+Phase 1: Lexical Analysis
 ----------------------------------------
 ✓ Tokenization successful: 5 tokens generated
 
-🌳 Phase 2: Syntax Analysis (Parsing)
+Phase 2: Syntax Analysis (Parsing)
 ----------------------------------------
 ✓ Parsing successful: AST generated
 
-🔍 Phase 3: Semantic Analysis
+Phase 3: Semantic Analysis
 ----------------------------------------
 ✓ Semantic analysis successful: No errors found
 
-⚙️ Phase 4: Code Generation
+Phase 4: Code Generation
 ----------------------------------------
 ✓ Code generation successful: 2 instructions generated
-✅ Compilation completed successfully!
+Compilation completed successfully!
 ```
 
 ### ⏱️ Should be Fast
@@ -266,7 +266,7 @@ If it takes longer than 2 seconds, something is wrong!
 
 ---
 
-## 🆘 **Emergency Bypass**
+## Emergency Bypass
 
 If interactive mode doesn't work at all, you can still use the compiler:
 
@@ -304,7 +304,7 @@ compiler.compile_source(code)
 
 ---
 
-## 📞 **Report the Issue**
+## Report the Issue
 
 If you're still stuck, gather this info:
 
@@ -316,16 +316,16 @@ If you're still stuck, gather this info:
 
 ---
 
-## ✨ **Updates Applied**
+## Updates Applied
 
 Your compiler now has:
-- ✅ Infinite loop detection
-- ✅ Better error messages
-- ✅ Automatic fixes for common issues
-- ✅ Debug mode with detailed output
-- ✅ Test script for diagnostics
+- Infinite loop detection
+- Better error messages
+- Automatic fixes for common issues
+- Debug mode with detailed output
+- Test script for diagnostics
 
-Try it again - it should work much better now! 🚀
+Try it again - it should work much better now!
 
 ---
 

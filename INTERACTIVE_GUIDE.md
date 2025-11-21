@@ -1,6 +1,6 @@
 # Interactive Compiler Mode Guide
 
-## 🚀 Quick Start
+## Quick Start
 
 Run the compiler in interactive mode to type and compile code dynamically!
 
@@ -40,7 +40,7 @@ When you launch interactive mode, you'll see 5 options:
 ```
 Choose mode: 2
 >>> x = 10 + 5
-✅ COMPILATION SUCCESSFUL!
+COMPILATION SUCCESSFUL
 ```
 
 ### Example 2: Multi-line Program
@@ -58,7 +58,7 @@ Enter your code (type :compile when done):
   8 | print(result)
   9 | :compile
 
-✅ COMPILATION SUCCESSFUL!
+COMPILATION SUCCESSFUL
 ```
 
 ### Example 3: If Statement
@@ -85,32 +85,32 @@ While typing code in multi-line mode, you can use these commands:
 
 ---
 
-## ✨ Features
+## Features
 
-### ✅ Full Compilation Pipeline
+### Full Compilation Pipeline
 - **Lexical Analysis**: See tokens generated from your code
 - **Syntax Analysis**: Parse tree and AST generation
 - **Semantic Analysis**: Type checking and scope resolution  
 - **Code Generation**: Three-address intermediate code
 
-### ✅ Real-time Feedback
+### Real-time Feedback
 - Instant compilation results
 - Clear error messages with line numbers
 - View generated instructions
 
-### ✅ Debug Mode
+### Debug Mode
 Toggle debug mode with `:debug` to see:
 - Complete token list
 - AST structure
 - Symbol table
 - All generated instructions
 
-### ✅ Compilation History
+### Compilation History
 View all your previous compilation attempts with the "Show history" option.
 
 ---
 
-## 📝 Supported Python Subset Features
+## Supported Python Subset Features
 
 ### Data Types
 - Integers: `42`, `-10`
@@ -161,7 +161,7 @@ result = greet("Student")
 
 ---
 
-## 🔍 Sample Session
+## Sample Session
 
 ```
 ======================================================================
@@ -205,36 +205,36 @@ Source Code:
   3 | sum = x + y
   4 | print("Sum:", sum)
 ----------------------------------------------------------------------
-🔄 Starting compilation process...
+Starting compilation process...
 ================================================================================
-📝 Phase 1: Lexical Analysis
+Phase 1: Lexical Analysis
 ----------------------------------------
 ✓ Tokenization successful: 18 tokens generated
 
-🌳 Phase 2: Syntax Analysis (Parsing)
+Phase 2: Syntax Analysis (Parsing)
 ----------------------------------------
 ✓ Parsing successful: AST generated
 
-🔍 Phase 3: Semantic Analysis
+Phase 3: Semantic Analysis
 ----------------------------------------
 ✓ Semantic analysis successful: No errors found
 
-⚙️ Phase 4: Code Generation
+Phase 4: Code Generation
 ----------------------------------------
 ✓ Code generation successful: 10 instructions generated
-✅ Compilation completed successfully!
+Compilation completed successfully!
 
 ======================================================================
-✅ COMPILATION SUCCESSFUL!
+COMPILATION SUCCESSFUL
 ======================================================================
 
-📊 Compilation Summary:
+Compilation Summary:
   • Tokens generated: 18
   • AST nodes: Generated
   • Semantic errors: 0
   • Instructions generated: 10
 
-📝 Generated Code (first 10 instructions):
+Generated Code (first 10 instructions):
     1: x = 10
     2: y = 20
     3: t1 = x + y
@@ -283,12 +283,12 @@ Interactive mode is ideal for:
 
 ---
 
-## 📚 Related Files
+## Related Files
 
 - `src/interactive.py` - Interactive compiler implementation
 - `src/compiler.py` - Main compiler (use with `-i` flag)
 - `run_interactive.py` - Quick launcher script
 - `examples/` - Sample programs to try
 
-Enjoy coding with your CMPE 152 compiler! 🎉
+Enjoy coding with your CMPE 152 compiler!
 

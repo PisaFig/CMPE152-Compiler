@@ -14,11 +14,11 @@
 ## Complete 4-Phase Implementation
 
 **Features:**
-- ✅ Lexical Analysis (DFA-based)
-- ✅ Syntax Analysis (Recursive Descent)
-- ✅ Semantic Analysis (Type Checking)
-- ✅ Code Generation (Three-Address Code)
-- ✅ **Interactive REPL Mode**
+- Lexical Analysis (DFA-based)
+- Syntax Analysis (Recursive Descent)
+- Semantic Analysis (Type Checking)
+- Code Generation (Three-Address Code)
+- **Interactive REPL Mode**
 
 **GitHub Repository:**  
 https://github.com/PisaFig/CMPE152-Compiler
@@ -303,9 +303,9 @@ z = 20
 
 **Output:**
 ```
-✓ Line 1: x = 10 (compiled successfully)
-❌ Line 2: Parse Error - Unexpected token PLUS
-✓ Line 3: z = 20 (compiled successfully)
+Line 1: x = 10 (compiled successfully)
+Line 2: Parse Error - Unexpected token PLUS
+Line 3: z = 20 (compiled successfully)
 ```
 
 **Recovery Strategy:**
@@ -377,7 +377,7 @@ flag = x > 5    # flag: BOOLEAN
 
 **Error Detection:**
 ```python
-result = 10 + "hello"  # ❌ Type Error!
+result = 10 + "hello"  # Type Error!
 ```
 
 ---
@@ -388,12 +388,12 @@ result = 10 + "hello"  # ❌ Type Error!
 
 **1. Undefined Variable:**
 ```python
-x = y + 1  # ❌ Error: Undefined variable 'y'
+x = y + 1  # Error: Undefined variable 'y'
 ```
 
 **2. Type Mismatch:**
 ```python
-x = 10 - "hello"  # ❌ Error: Cannot subtract STRING from INTEGER
+x = 10 - "hello"  # Error: Cannot subtract STRING from INTEGER
 ```
 
 **3. Wrong Argument Count:**
@@ -401,13 +401,13 @@ x = 10 - "hello"  # ❌ Error: Cannot subtract STRING from INTEGER
 def add(a, b):
     return a + b
 
-result = add(5)  # ❌ Error: Expected 2 arguments, got 1
+result = add(5)  # Error: Expected 2 arguments, got 1
 ```
 
 **4. Return Outside Function:**
 ```python
 x = 10
-return x  # ❌ Error: Return statement outside function
+return x  # Error: Return statement outside function
 ```
 
 ---
@@ -536,10 +536,10 @@ print("Product:", product)
 ```
 
 ### Compilation Results:
-- ✅ **Tokens:** 42 generated
-- ✅ **AST:** 8 statements
-- ✅ **Semantic:** 0 errors
-- ✅ **Code:** 15 instructions
+- **Tokens:** 42 generated
+- **AST:** 8 statements
+- **Semantic:** 0 errors
+- **Code:** 15 instructions
 
 ---
 
@@ -563,9 +563,9 @@ while counter > 0:
 ```
 
 ### Results:
-- ✅ **Nested if/elif/else** handled correctly
-- ✅ **While loop** generates proper labels
-- ✅ **78 lines** of test code compiled successfully
+- **Nested if/elif/else** handled correctly
+- **While loop** generates proper labels
+- **78 lines** of test code compiled successfully
 
 ---
 
@@ -584,14 +584,14 @@ print(result)
 ```
 
 ### Results:
-- ✅ **Recursive calls** properly handled
-- ✅ **Function scope** correctly managed
-- ✅ **Return values** tracked through call stack
-- ✅ **100 lines** compiled with complex logic
+- **Recursive calls** properly handled
+- **Function scope** correctly managed
+- **Return values** tracked through call stack
+- **100 lines** compiled with complex logic
 
 ---
 
-## Slide 24: Interactive Mode - NEW FEATURE! 🚀
+## Slide 24: Interactive Mode - NEW FEATURE
 
 ### Dynamic Code Compilation
 
@@ -605,7 +605,7 @@ python run_interactive.py
 1. **Quick Mode** - Single expressions
 ```
 >>> x = 10 + 5
-✅ Compilation successful!
+Compilation successful!
 ```
 
 2. **Multi-line Mode** - Full programs
@@ -613,7 +613,7 @@ python run_interactive.py
   1 | def greet(name):
   2 |     return "Hello, " + name
   3 | :compile
-✅ All phases executed!
+All phases executed!
 ```
 
 **Live Commands:** `:compile`, `:debug`, `:clear`, `:exit`
@@ -627,23 +627,23 @@ python run_interactive.py
 **Shows All 4 Phases:**
 
 ```
-🔄 Starting compilation process...
+Starting compilation process...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 Phase 1: Lexical Analysis
-✓ Tokenization successful: 8 tokens
+Phase 1: Lexical Analysis
+Tokenization successful: 8 tokens
 
-🌳 Phase 2: Syntax Analysis
-✓ AST generated: 1 statement
+Phase 2: Syntax Analysis
+AST generated: 1 statement
 
-🔍 Phase 3: Semantic Analysis
-✓ Type checking passed
+Phase 3: Semantic Analysis
+Type checking passed
 
-⚙️ Phase 4: Code Generation
-✓ Generated 3 instructions:
+Phase 4: Code Generation
+Generated 3 instructions:
   1: t1 = 10 + 5
   2: x = t1
 
-✅ Compilation completed!
+Compilation completed!
 ```
 
 ---
@@ -760,22 +760,22 @@ Used for: AST traversal in semantic analysis and code generation
 ### Potential Improvements
 
 **Language Features:**
-- ✨ Classes and objects
-- ✨ Lambda expressions
-- ✨ List comprehensions
-- ✨ Exception handling (try/except)
-- ✨ Import statements
+- Classes and objects
+- Lambda expressions
+- List comprehensions
+- Exception handling (try/except)
+- Import statements
 
 **Optimization:**
-- ✨ Constant folding
-- ✨ Dead code elimination
-- ✨ Common subexpression elimination
-- ✨ Register allocation
+- Constant folding
+- Dead code elimination
+- Common subexpression elimination
+- Register allocation
 
 **Code Generation:**
-- ✨ Target actual assembly (x86/ARM)
-- ✨ LLVM IR generation
-- ✨ JVM bytecode
+- Target actual assembly (x86/ARM)
+- LLVM IR generation
+- JVM bytecode
 
 ---
 
@@ -879,23 +879,23 @@ print("2^5 =", result)
 
 ### GitHub Repository
 
-**🌐 Live Repository:**
+**Live Repository:**
 https://github.com/PisaFig/CMPE152-Compiler
 
-**📊 Repository Contents:**
-- ✅ Complete source code (5,092 lines)
-- ✅ Test cases with examples
-- ✅ Comprehensive documentation
-- ✅ Interactive mode
-- ✅ Troubleshooting guides
-- ✅ Cross-platform launchers
+**Repository Contents:**
+- Complete source code (5,092 lines)
+- Test cases with examples
+- Comprehensive documentation
+- Interactive mode
+- Troubleshooting guides
+- Cross-platform launchers
 
-**📥 Clone Command:**
+**Clone Command:**
 ```bash
 git clone https://github.com/PisaFig/CMPE152-Compiler.git
 ```
 
-**🎓 Perfect for:**
+**Perfect for:**
 - Academic portfolio
 - Future reference
 - Learning resource
@@ -907,15 +907,15 @@ git clone https://github.com/PisaFig/CMPE152-Compiler.git
 ### Project Summary
 
 **Achievements:**
-- ✅ Complete 4-phase compiler implementation
-- ✅ 5,092 lines of production code
-- ✅ DFA-based lexical analysis
-- ✅ LL(1) recursive descent parser
-- ✅ Type checking with symbol tables
-- ✅ Three-address code generation
-- ✅ Interactive REPL mode
-- ✅ Comprehensive error handling
-- ✅ Extensive documentation
+- Complete 4-phase compiler implementation
+- 5,092 lines of production code
+- DFA-based lexical analysis
+- LL(1) recursive descent parser
+- Type checking with symbol tables
+- Three-address code generation
+- Interactive REPL mode
+- Comprehensive error handling
+- Extensive documentation
 
 **Key Takeaway:**
 Built a fully functional compiler demonstrating mastery of:
@@ -1015,11 +1015,11 @@ term            → factor ((PLUS | MINUS) factor)*
 https://github.com/PisaFig/CMPE152-Compiler
 
 **Key Statistics:**
-- 📊 5,092 lines of code
-- 📁 24 files
-- 🔢 4 compilation phases
-- 📝 3 comprehensive test cases
-- 📚 1,000+ lines of documentation
+- 5,092 lines of code
+- 24 files
+- 4 compilation phases
+- 3 comprehensive test cases
+- 1,000+ lines of documentation
 
 **Special Thanks:**
 - Professor [Name]

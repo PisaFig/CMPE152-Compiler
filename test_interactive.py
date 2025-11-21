@@ -141,7 +141,7 @@ def test_parser_only():
 
 def main():
     """Run all tests"""
-    print("🔍 Interactive Compiler Debug Tests")
+    print("Interactive Compiler Debug Tests")
     print("=" * 70)
     print()
     
@@ -161,7 +161,7 @@ def main():
             result = test_func()
             results.append((name, result))
         except Exception as e:
-            print(f"\n❌ TEST CRASHED: {e}")
+            print(f"\nTEST CRASHED: {e}")
             import traceback
             traceback.print_exc()
             results.append((name, False))
@@ -175,7 +175,7 @@ def main():
     failed = 0
     
     for name, result in results:
-        status = "✅ PASS" if result else "❌ FAIL"
+        status = "PASS" if result else "FAIL"
         print(f"{status:10s} {name}")
         if result:
             passed += 1

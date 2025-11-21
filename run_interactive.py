@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 from interactive import InteractiveCompiler
 
 if __name__ == "__main__":
-    print("🚀 Launching CMPE 152 Interactive Compiler...\n")
+    print("Launching CMPE 152 Interactive Compiler...\n")
     repl = InteractiveCompiler()
     repl.run()
 
